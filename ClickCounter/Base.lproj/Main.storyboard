@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1066" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="ClickCounter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +16,88 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdQ-HT-Iv1">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="179" y="254" width="42" height="21"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="puL-eE-txd">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Increment">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="76" y="385" width="89" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="incrementCount" destination="vXZ-lx-hvc" eventType="touchUpInside" id="biL-A9-0a1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vyA-48-xLN">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Decrement">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="241" y="385" width="90" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="decrementCount" destination="vXZ-lx-hvc" eventType="touchUpInside" id="lP1-Bv-1j2"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="puL-eE-txd" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="365" id="1hb-CO-vqM"/>
+                            <constraint firstAttribute="centerY" secondItem="VdQ-HT-Iv1" secondAttribute="centerY" id="IAn-CH-ptk"/>
+                            <constraint firstAttribute="centerX" secondItem="VdQ-HT-Iv1" secondAttribute="centerX" id="Uuu-9G-Jqg"/>
+                            <constraint firstItem="vyA-48-xLN" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="365" id="bQG-Gs-9g0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vyA-48-xLN" secondAttribute="trailing" constant="53" id="iC4-TW-kCk"/>
+                            <constraint firstItem="puL-eE-txd" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="60" id="sMS-bL-xZW"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="VdQ-HT-Iv1"/>
+                                <exclude reference="puL-eE-txd"/>
+                                <exclude reference="vyA-48-xLN"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="IAn-CH-ptk"/>
+                                <exclude reference="Uuu-9G-Jqg"/>
+                                <exclude reference="1hb-CO-vqM"/>
+                                <exclude reference="sMS-bL-xZW"/>
+                                <exclude reference="bQG-Gs-9g0"/>
+                                <exclude reference="iC4-TW-kCk"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="VdQ-HT-Iv1"/>
+                                <include reference="puL-eE-txd"/>
+                                <include reference="vyA-48-xLN"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="IAn-CH-ptk"/>
+                                <include reference="Uuu-9G-Jqg"/>
+                                <include reference="1hb-CO-vqM"/>
+                                <include reference="sMS-bL-xZW"/>
+                                <include reference="bQG-Gs-9g0"/>
+                                <include reference="iC4-TW-kCk"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="VdQ-HT-Iv1" id="Knc-rU-i7L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="138" y="135.75"/>
         </scene>
     </scenes>
 </document>
